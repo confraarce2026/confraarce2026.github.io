@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Confraternização de Fim de Ano da ARCE</title>
-<meta name="description" content="Confraternização de Fim de Ano da ARCE em 08/12: almoço, banda ao vivo, karaokê com premiação, sorteios e a escolha do mascote e do uniforme dos Jogos dos Servidores.">
+<meta name="description" content="Confraternização de Fim de Ano da ARCE em 08/12: almoço, banda ao vivo, karaokê com premiação, sorteios, a apresentação dos mascotes e a escolha do uniforme dos Jogos dos Servidores.">
 <meta property="og:title" content="Confraternização de Fim de Ano da ARCE">
-<meta property="og:description" content="08/12: almoço, banda ao vivo, karaokê com premiação e a escolha do mascote e do uniforme. Inscreva-se e vote!">
+<meta property="og:description" content="08/12: almoço, banda ao vivo, karaokê com premiação, estreia dos mascotes e a escolha do uniforme. Inscreva-se e vote!">
 <meta property="og:image" content="https://confraarce2026.github.io/img/card-evento.jpg">
 <meta property="og:url" content="https://confraarce2026.github.io/">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎤</text></svg>">
@@ -129,7 +129,7 @@
   .cabeca h2 i { color: var(--vermelho); }
   .cabeca p { margin: 0; color: var(--tinta-2); font-size: 18px; }
   @media (max-width: 820px) { .cabeca { grid-template-columns: 1fr; } }
-  .roteiro { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; position: relative; }
+  .roteiro { display: grid; grid-template-columns: repeat(6, 1fr); gap: 0; position: relative; }
   .roteiro::before { content: ""; position: absolute; left: 6%; right: 6%; top: 36px; border-top: 3px dashed var(--dourado); }
   .passo { position: relative; text-align: center; padding: 0 12px; }
   .passo .bola { width: 72px; height: 72px; margin: 0 auto 16px; border-radius: 50%; background: #fff; border: 3px solid var(--tinta); display: grid; place-items: center; font-size: 30px; position: relative; }
@@ -204,6 +204,32 @@
   .trofeu.primeiro { padding-top: 40px; background: linear-gradient(180deg, rgba(217, 164, 58, .35), var(--palco-2)); border-color: rgba(217, 164, 58, .8); }
   @media (max-width: 640px) { .trofeus { grid-template-columns: 1fr; } .trofeu.primeiro { order: -1; } }
 
+
+  /* mascotes: silhuetas sob holofote */
+  .mascotes { background: linear-gradient(180deg, #2a1838, var(--tinta) 60%); color: #f2ecff; position: relative; overflow: hidden; }
+  .mascotes .kicker { color: var(--dourado-claro); }
+  .mascotes .cabeca p { color: #c9bfe0; }
+  .mascotes .cabeca h2 i { color: var(--dourado-claro); }
+  .mascotes .padrao { background: var(--dourado); color: var(--tinta); }
+  .vultos { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 26px; }
+  @media (max-width: 820px) { .vultos { grid-template-columns: minmax(0, 1fr); max-width: 360px; margin-inline: auto; } }
+  .vulto { margin: 0; padding-top: 20px; text-align: center; }
+  .vulto .luz { position: relative; display: grid; place-items: end center; height: 380px; padding: 30px 20px 0; border-radius: 200px 200px 20px 20px;
+    background: radial-gradient(60% 55% at 50% 42%, #fff3cf 0%, var(--dourado-claro) 34%, #b98a2e 70%, #3a2a3e 100%);
+    box-shadow: inset 0 -30px 50px rgba(20, 12, 36, .55), 0 26px 60px rgba(0, 0, 0, .45); }
+  .vulto .luz::after { content: ""; position: absolute; left: 10%; right: 10%; bottom: 0; height: 26px; border-radius: 50%; background: rgba(20, 12, 36, .45); filter: blur(6px); }
+  .vulto img { position: relative; z-index: 1; max-height: 330px; width: auto; filter: drop-shadow(0 6px 10px rgba(20, 12, 36, .35)); }
+  .vulto .interroga { position: absolute; z-index: 2; top: -20px; left: 50%; margin-left: -26px; width: 52px; height: 52px; border-radius: 50%; display: grid; place-items: center;
+    background: var(--vermelho); color: #fff; font: 800 30px "Fraunces", serif; box-shadow: 0 0 0 4px rgba(255, 255, 255, .25); }
+  .vulto figcaption { padding-top: 16px; }
+  .vulto figcaption b { display: block; font: 800 22px "Fraunces", serif; }
+  .vulto figcaption span { color: #c9bfe0; font-size: 15px; }
+  @media (prefers-reduced-motion: no-preference) {
+    .vulto .luz { animation: pulsar 4s ease-in-out infinite; }
+    .vulto:nth-child(2) .luz { animation-delay: -1.3s; } .vulto:nth-child(3) .luz { animation-delay: -2.6s; }
+    @keyframes pulsar { 50% { filter: brightness(1.12); } }
+  }
+
   /* votação */
   .votacao { background: var(--creme-2); }
   .padrao { display: inline-block; margin-top: 14px; padding: 6px 14px; border-radius: 8px; background: var(--tinta); color: var(--dourado-claro); font-weight: 700; font-size: 14px; letter-spacing: 1px; text-transform: uppercase; line-height: 1.35; }
@@ -268,7 +294,7 @@
       <ul>
         <li><a href="#programacao">Programação</a></li>
         <li><a href="#karaoke">Karaokê</a></li>
-        <li><a href="#mascote">Mascote</a></li>
+        <li><a href="#mascotes">Mascotes</a></li>
         <li><a href="#uniforme">Uniforme</a></li>
       </ul>
       <a class="btn pequeno" href="#karaoke">Quero cantar 🎤</a>
@@ -286,10 +312,10 @@
     <div>
       <span class="kicker"><span>ARCE · <span data-cfg="diaSemana"></span>, <span data-cfg="dataEvento"></span></span></span>
       <h1 class="serif">Confraternização de <i>Fim de Ano</i></h1>
-      <p class="lead">Vamos celebrar mais um ano de conquistas, trabalho e parceria! Almoço, banda ao vivo, karaokê com premiação, sorteios e a escolha do mascote e do uniforme dos Jogos dos Servidores.</p>
+      <p class="lead">Vamos celebrar mais um ano de conquistas, trabalho e parceria! Almoço, banda ao vivo, karaokê com premiação, sorteios, a apresentação dos mascotes e a escolha do uniforme dos Jogos dos Servidores.</p>
       <div class="acoes">
         <a class="btn" href="#karaoke">Inscrever no karaokê</a>
-        <a class="btn claro" href="#mascote">Votar no mascote e no uniforme</a>
+        <a class="btn claro" href="#uniforme">Votar no uniforme</a>
       </div>
       <div class="contagem" aria-live="polite">
         <span class="rotulo" id="cd-label">Faltam</span>
@@ -308,8 +334,8 @@
 
 <div class="faixa" aria-hidden="true">
   <div class="trilho">
-    <span>Almoço</span><span>Banda ao vivo</span><span>Karaokê</span><span>Sorteios e brindes</span><span>Escolha do mascote</span><span>Escolha do uniforme</span>
-    <span>Almoço</span><span>Banda ao vivo</span><span>Karaokê</span><span>Sorteios e brindes</span><span>Escolha do mascote</span><span>Escolha do uniforme</span>
+    <span>Almoço</span><span>Banda ao vivo</span><span>Karaokê</span><span>Sorteios e brindes</span><span>Estreia dos mascotes</span><span>Escolha do uniforme</span>
+    <span>Almoço</span><span>Banda ao vivo</span><span>Karaokê</span><span>Sorteios e brindes</span><span>Estreia dos mascotes</span><span>Escolha do uniforme</span>
   </div>
 </div>
 
@@ -317,14 +343,15 @@
   <div class="wrap">
     <div class="cabeca">
       <div><span class="kicker">Programação</span><h2 class="serif">Um almoço para <i>fechar o ano</i></h2></div>
-      <p>Muita música, prêmios e duas decisões importantes para os Jogos dos Servidores. Confira o que vai rolar.</p>
+      <p>Muita música, prêmios, a estreia dos mascotes e a escolha do uniforme dos Jogos dos Servidores. Confira o que vai rolar.</p>
     </div>
     <div class="roteiro">
       <div class="passo"><div class="bola">🍽️</div><div><h3>Almoço</h3><p>Um almoço caprichado para todo o time da ARCE.</p></div></div>
       <div class="passo"><div class="bola">🎸</div><div><h3>Banda ao vivo</h3><p>Formada por servidores da casa. Quem são? Só no dia!</p></div></div>
       <div class="passo"><div class="bola">🎤</div><div><h3>Karaokê</h3><p>Cante com a banda e concorra a prêmios.</p></div></div>
       <div class="passo"><div class="bola">🎁</div><div><h3>Sorteios</h3><p>Brindes sorteados ao longo da festa.</p></div></div>
-      <div class="passo"><div class="bola">🗳️</div><div><h3>Votação</h3><p>Mascote e uniforme dos Jogos dos Servidores.</p></div></div>
+      <div class="passo"><div class="bola">🎭</div><div><h3>Mascotes</h3><p>Apresentação dos mascotes dos Jogos dos Servidores.</p></div></div>
+      <div class="passo"><div class="bola">👕</div><div><h3>Uniforme</h3><p>Revelação da camisa mais votada.</p></div></div>
     </div>
   </div>
 </section>
@@ -390,34 +417,31 @@
   </div>
 </section>
 
-<form id="form-voto" novalidate>
-<section class="votacao" id="mascote">
+<section class="mascotes" id="mascotes">
   <div class="wrap">
     <div class="cabeca">
-      <div><span class="kicker">Votação</span><h2 class="serif">Quem será o nosso <i>mascote?</i></h2>
+      <div><span class="kicker">Estreia no dia 08/12</span><h2 class="serif">Os mascotes vão <i>entrar em cena</i></h2>
         <span class="padrao">Jogos dos Servidores 2027<br>Time Arce</span></div>
-      <p>Três candidatos, um para cada área regulada pela ARCE. Clique no seu favorito. O vencedor será anunciado na confraternização.</p>
+      <p>Três mascotes, um para cada área regulada pela ARCE, vão representar o Time Arce nos Jogos dos Servidores. Quem são eles? A apresentação é ao vivo, na confraternização.</p>
     </div>
-    <div class="polaroids">
-      <label class="opcao"><input type="radio" name="mascote" value="Zé Ligeiro"><span class="fita">✓ Meu voto</span>
-        <img src="img/mascote-ze-ligeiro.jpg" alt="Zé Ligeiro, jumento motorista, mascote do transporte" width="600" height="848" loading="lazy">
-        <span class="leg"><b>Zé Ligeiro</b><span>"Ninguém segura o Zé!"</span></span></label>
-      <label class="opcao"><input type="radio" name="mascote" value="Marina"><span class="fita">✓ Meu voto</span>
-        <img src="img/mascote-marina.jpg" alt="Marina, peixe-boi, mascote do saneamento" width="600" height="848" loading="lazy">
-        <span class="leg"><b>Marina</b><span>"Água limpa, time forte!"</span></span></label>
-      <label class="opcao"><input type="radio" name="mascote" value="Faísca"><span class="fita">✓ Meu voto</span>
-        <img src="img/mascote-faisca.jpg" alt="Faísca, calango, mascote da energia" width="600" height="848" loading="lazy">
-        <span class="leg"><b>Faísca</b><span>"Sol na cabeça, energia no corpo!"</span></span></label>
+    <div class="vultos">
+      <figure class="vulto"><div class="luz"><img src="img/silhueta-ze.png" alt="Silhueta de um mascote misterioso segurando um volante" width="312" height="520"><span class="interroga">?</span></div>
+        <figcaption><b>Mascote do Transporte</b><span>Revelação no palco</span></figcaption></figure>
+      <figure class="vulto"><div class="luz"><img src="img/silhueta-marina.png" alt="Silhueta de um mascote misterioso cercado de gotas" width="446" height="520"><span class="interroga">?</span></div>
+        <figcaption><b>Mascote do Saneamento</b><span>Revelação no palco</span></figcaption></figure>
+      <figure class="vulto"><div class="luz"><img src="img/silhueta-faisca.png" alt="Silhueta de um mascote misterioso de braços erguidos e chapéu com cata-vento" width="399" height="520"><span class="interroga">?</span></div>
+        <figcaption><b>Mascote da Energia</b><span>Revelação no palco</span></figcaption></figure>
     </div>
   </div>
 </section>
 
-<section class="votacao" id="uniforme" style="padding-top:0">
+<form id="form-voto" novalidate>
+<section class="votacao" id="uniforme">
   <div class="wrap">
     <div class="cabeca">
       <div><span class="kicker">Votação</span><h2 class="serif">Qual camisa o time vai <i>vestir?</i></h2>
         <span class="padrao">Jogos dos Servidores<br>Time Arce</span></div>
-      <p>Três propostas nas cores da ARCE. Escolha a sua favorita.</p>
+      <p>Três propostas nas cores da ARCE. Escolha a sua favorita: a camisa vencedora será revelada no dia da confraternização.</p>
     </div>
     <div class="camisas">
       <label class="opcao camisa"><input type="radio" name="uniforme" value="Opção 1 – Faixas brancas"><span class="fita">✓ Meu voto</span>
@@ -433,8 +457,8 @@
 
     <div class="confirmar" id="voto-box">
       <h3>Confirme seu voto</h3>
-      <p>Um voto por pessoa em cada categoria. Vale votar só no mascote, só no uniforme ou nos dois. Votação aberta até <b data-cfg="prazoVotacao"></b>.</p>
-      <div class="escolhas"><span id="esc-mascote">Mascote: nenhum</span><span id="esc-uniforme">Uniforme: nenhum</span></div>
+      <p>Um voto por pessoa. Votação aberta até <b data-cfg="prazoVotacao"></b>.</p>
+      <div class="escolhas"><span id="esc-uniforme">Camisa escolhida: nenhuma</span></div>
       <div class="linha">
         <label>Nome completo
           <input name="nome" autocomplete="name" required maxlength="80">
@@ -449,7 +473,7 @@
     <div class="confirmar feito" id="ok-voto" hidden>
       <div class="grande">🗳️</div>
       <h3>Voto registrado!</h3>
-      <p id="ok-voto-texto">Obrigado por participar. O resultado será anunciado na confraternização.</p>
+      <p id="ok-voto-texto">Obrigado por participar. A camisa vencedora será revelada na confraternização.</p>
     </div>
   </div>
 </section>
@@ -486,7 +510,7 @@
     // Carimbo de data/hora, Nome, Setor, Música, Artista
     karaokeCsvUrl: "https://docs.google.com/spreadsheets/d/e/2PACX-1vSyOFlrViXtl8PaUnw0Fb0DkNza7hIhtWC8Xr4zb1-JJMCyoAfvltkqZdkn1KTomqHAs2eFHjJBWMZb/pub?gid=238999320&single=true&output=csv",
 
-    // Google Forms da VOTAÇÃO (mascote e uniforme)
+    // Google Forms da VOTAÇÃO (só o uniforme; o campo mascote do form ficou sem uso)
     votoFormAction: "https://docs.google.com/forms/d/e/1FAIpQLSfzqJ3FAugmfzSJyHTzWy-l3xmNQklfoHlzUuQXyGo0_6SjHg/formResponse",
     votoFields: { nome: "entry.892810600", setor: "entry.1548367096", mascote: "entry.279198984", uniforme: "entry.141839795" }
   };
@@ -602,12 +626,11 @@
   const ev = document.getElementById("erro-voto");
   const barra = document.getElementById("barra-voto");
   function atualizarEscolhas() {
-    const m = fv.elements.mascote.value, u = fv.elements.uniforme.value;
-    const em = document.getElementById("esc-mascote"), eu = document.getElementById("esc-uniforme");
-    em.textContent = "Mascote: " + (m || "nenhum"); em.classList.toggle("ok", !!m);
-    eu.textContent = "Uniforme: " + (u || "nenhum"); eu.classList.toggle("ok", !!u);
-    document.getElementById("barra-texto").textContent = "Seu voto: " + [m, u].filter(Boolean).join(" · ");
-    barra.classList.toggle("on", !!(m || u) && !document.getElementById("voto-box").hidden);
+    const u = fv.elements.uniforme.value;
+    const eu = document.getElementById("esc-uniforme");
+    eu.textContent = "Camisa escolhida: " + (u || "nenhuma"); eu.classList.toggle("ok", !!u);
+    document.getElementById("barra-texto").textContent = "Seu voto: " + u;
+    barra.classList.toggle("on", !!u && !document.getElementById("voto-box").hidden);
   }
   fv.addEventListener("change", atualizarEscolhas);
   // esconde a barra quando o quadro de confirmação já está na tela
@@ -617,20 +640,19 @@
 
   fv.addEventListener("submit", async e => {
     e.preventDefault(); ev.textContent = "";
-    const mascote = fv.elements.mascote.value, uniforme = fv.elements.uniforme.value;
-    if (!mascote && !uniforme) { ev.textContent = "Escolha um mascote e/ou um uniforme antes de confirmar."; document.getElementById("mascote").scrollIntoView(); return; }
+    const uniforme = fv.elements.uniforme.value;
+    if (!uniforme) { ev.textContent = "Escolha uma das camisas antes de confirmar."; document.getElementById("uniforme").scrollIntoView(); return; }
     if (!validar(fv, { nome: nomeOk, setor: setorOk }, ev)) return;
     const f = CONFIG.votoFields, v = n => fv.elements[n].value.trim();
     const btn = document.getElementById("btn-voto");
     btn.disabled = true; btn.textContent = "Enviando…";
     try {
-      await enviar(CONFIG.votoFormAction, [[f.nome, v("nome")], [f.setor, v("setor")], [f.mascote, mascote], [f.uniforme, uniforme]]);
+      await enviar(CONFIG.votoFormAction, [[f.nome, v("nome")], [f.setor, v("setor")], [f.uniforme, uniforme]]);
       document.getElementById("voto-box").hidden = true;
       barra.classList.remove("on");
       document.querySelectorAll("#form-voto input[type=radio]").forEach(i => (i.disabled = true));
       document.getElementById("ok-voto").hidden = false;
-      const partes = [mascote && `mascote: ${mascote}`, uniforme && `uniforme: ${uniforme}`].filter(Boolean).join(" · ");
-      document.getElementById("ok-voto-texto").textContent = `Seu voto (${partes}) foi registrado. O resultado será anunciado na confraternização.`;
+      document.getElementById("ok-voto-texto").textContent = `Seu voto (${uniforme}) foi registrado. A camisa vencedora será revelada na confraternização.`;
     } catch {
       ev.textContent = "Não foi possível enviar. Verifique sua conexão e tente de novo.";
       btn.disabled = false; btn.textContent = "Confirmar voto";
