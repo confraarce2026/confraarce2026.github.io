@@ -484,7 +484,7 @@
     karaokeAceiteTexto: "Ciente da ordem por inscrição e das vagas limitadas no dia.",
     // Planilha das respostas do karaokê publicada como CSV, com as colunas:
     // Carimbo de data/hora, Nome, Setor, Música, Artista
-    karaokeCsvUrl: "",
+    karaokeCsvUrl: "https://docs.google.com/spreadsheets/d/e/2PACX-1vSyOFlrViXtl8PaUnw0Fb0DkNza7hIhtWC8Xr4zb1-JJMCyoAfvltkqZdkn1KTomqHAs2eFHjJBWMZb/pub?gid=238999320&single=true&output=csv",
 
     // Google Forms da VOTAÇÃO (mascote e uniforme)
     votoFormAction: "https://docs.google.com/forms/d/e/1FAIpQLSfzqJ3FAugmfzSJyHTzWy-l3xmNQklfoHlzUuQXyGo0_6SjHg/formResponse",
@@ -538,8 +538,9 @@
       fk.hidden = true;
       document.getElementById("ok-karaoke").hidden = false;
       document.getElementById("ok-karaoke-texto").textContent =
-        `${v("nome").split(/\s+/)[0]}, você entrou na fila com "${v("musica")}" (${v("artista")}). Acompanhe sua posição no setlist.`;
-      if (!CONFIG.karaokeCsvUrl) adicionarNaFila(v("nome"), v("setor"), v("musica"), v("artista"));
+        `${v("nome").split(/\s+/)[0]}, você entrou na fila com "${v("musica")}" (${v("artista")}). Acompanhe sua posição no setlist.` +
+        (CONFIG.karaokeCsvUrl ? " Sua inscrição pode levar alguns minutos para aparecer para todo mundo." : "");
+      adicionarNaFila(v("nome"), v("setor"), v("musica"), v("artista"));
     } catch {
       ek.textContent = "Não foi possível enviar. Verifique sua conexão e tente de novo.";
       btn.disabled = false; btn.textContent = "Quero cantar! 🎤";
