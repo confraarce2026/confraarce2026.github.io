@@ -479,16 +479,16 @@
     prazoVotacao: "07/12",
 
     // Google Forms do KARAOKÊ (deixe em branco enquanto for esboço)
-    karaokeFormAction: "",
-    karaokeFields: { nome: "entry.0", setor: "entry.0", musica: "entry.0", artista: "entry.0", opcao2: "entry.0", aceite: "entry.0" },
+    karaokeFormAction: "https://docs.google.com/forms/d/e/1FAIpQLSeZpOMdj1jrgWsKKTA7O9RWX4fVyrD86ozzoU1YV4GknxR9MQ/formResponse",
+    karaokeFields: { nome: "entry.782058038", setor: "entry.399043417", musica: "entry.555571841", artista: "entry.714592648", opcao2: "entry.494388222", aceite: "entry.571013966" },
     karaokeAceiteTexto: "Ciente da ordem por inscrição e das vagas limitadas no dia.",
     // Planilha das respostas do karaokê publicada como CSV, com as colunas:
     // Carimbo de data/hora, Nome, Setor, Música, Artista
     karaokeCsvUrl: "",
 
     // Google Forms da VOTAÇÃO (mascote e uniforme)
-    votoFormAction: "",
-    votoFields: { nome: "entry.0", setor: "entry.0", mascote: "entry.0", uniforme: "entry.0" }
+    votoFormAction: "https://docs.google.com/forms/d/e/1FAIpQLSfzqJ3FAugmfzSJyHTzWy-l3xmNQklfoHlzUuQXyGo0_6SjHg/formResponse",
+    votoFields: { nome: "entry.892810600", setor: "entry.1548367096", mascote: "entry.279198984", uniforme: "entry.141839795" }
   };
   /* ===================================================================== */
 
@@ -584,6 +584,10 @@
       if (!rows.length) fila.innerHTML = "<li class='exemplo'><div><b>Ninguém ainda</b><span> · seja o primeiro da fila!</span></div></li>";
       totalFila();
     });
+  } else if (!ESBOCO) {
+    // forms ligados, mas a planilha ainda não foi publicada em CSV
+    fila.innerHTML = "<li class='exemplo'><div><b>Fila em breve</b><span> · a lista de inscritos aparece aqui na ordem de inscrição</span></div></li>";
+    document.getElementById("fila-total").textContent = "";
   } else {
     [["Fulana de Tal", "CTR", "Evidências", "Chitãozinho & Xororó"],
      ["Beltrano Silva", "GAF", "Asa Branca", "Luiz Gonzaga"],
